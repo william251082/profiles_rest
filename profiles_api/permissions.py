@@ -1,7 +1,7 @@
 from rest_framework import permissions
 
 
-class UpdateownProfile(permissions.BasePermission):
+class UpdateOwnProfile(permissions.BasePermission):
     """ Allow users to edit their own profile. """
 
     def has_object_permission(self, request, view, obj):
