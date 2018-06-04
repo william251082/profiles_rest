@@ -29,6 +29,8 @@ class UserProfileManager(BaseUserManager):
         user = self.create_user(email, name, password)
 
         user.is_superuser = True
+        user.is_staff = True
+
         user.save(using=self.db)
 
         return user
@@ -59,4 +61,5 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         """ Django uses this when it need to convert the object to string. """
+        return self.email
 
